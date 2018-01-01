@@ -8,6 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<style type="text/css"></style>
+		<style type="text/css">
+    button,
+    div,
+    form,
+    input {
+      margin: 10px;
+    }
+  </style>
 	</head>
 	<body>
 		
@@ -15,13 +23,16 @@
 		<div class="container">
 		<h1> The Giphy that keeps on giving</h1>	
 
-	<div id="buttons-view"></div>
+
+
+<!-- Where Giphy buttons will be displayed -->
+	<div id="giphyButtons-view"></div>
 
 	<form id="giphy form">
 		<label for="giphy-input"> Add a giphy</label>
 		<input type="text" id="giphy-input"><br>
 
-		<!-- Button triggers new movie to be added -->
+		<!-- Button triggers new giphy to be added -->
 	<input id="add-giphy" type="submit" value="Add giphy">
 			 
 	</form>
