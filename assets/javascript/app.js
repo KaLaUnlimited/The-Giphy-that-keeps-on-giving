@@ -15,11 +15,15 @@
          $('#giphy-view').empty();
 
          for (var i = 0; i < gifs.length; i++) {
-             var url_2 = gifs[i].images.downsized.url;
+            var giphDiv= $('<div>');
+             var url_2 = $('<img>').attr('src', gifs[i].images.downsized.url)
+             var rating= $('<p>').text("Rating: " + gifs[i].rating);
 
              //  $('#giphy-view').append($('<div>').css('background-image', 'url(' + url2 + ')'));
-
-             $('#giphy-view').append($('<img>').attr('src', url_2));
+            giphDiv.append(rating);
+            giphDiv.append(url_2);
+            // $('#giphy-view').append($('<img>').attr('src', url_2));
+             $('#giphy-view').append(giphDiv);
 
          }
      });
