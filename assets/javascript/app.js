@@ -16,14 +16,13 @@
 
          for (var i = 0; i < gifs.length; i++) {
             var giphDiv= $('<div>');
-             var url_2 = $('<img>').attr('src', gifs[i].images.downsized.url)
+             var url_2 = $('<img>').attr('src', gifs[i].images.fixed_height.url)
              var rating= $('<p>').text("Rating: " + gifs[i].rating);
 
              //  $('#giphy-view').append($('<div>').css('background-image', 'url(' + url2 + ')'));
             giphDiv.append(rating);
             giphDiv.append(url_2);
-            // $('#giphy-view').append($('<img>').attr('src', url_2));
-             $('#giphy-view').append(giphDiv);
+            $('#giphy-view').append(giphDiv);
 
          }
      });
