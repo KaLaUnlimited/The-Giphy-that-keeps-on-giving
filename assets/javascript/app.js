@@ -15,14 +15,18 @@
          $('#giphy-view').empty();
 
          for (var i = 0; i < gifs.length; i++) {
-            var giphDiv= $('<div>');
-             var url_2 = $('<img>').attr('src', gifs[i].images.fixed_height.url)
-             var rating= $('<p>').text("Rating: " + gifs[i].rating);
+             var giphDiv = $('<div>');
+             var url_2 = $('<img>').attr('src', gifs[i].images.fixed_height_still.url)
+             var rating = $('<p>').text("Rating: " + gifs[i].rating);
 
              //  $('#giphy-view').append($('<div>').css('background-image', 'url(' + url2 + ')'));
-            giphDiv.append(rating);
-            giphDiv.append(url_2);
-            $('#giphy-view').append(giphDiv);
+             giphDiv.addClass("pause");
+             giphDiv.attr("data-still", gifs[i].images.fixed_height_still.url);
+             giphDiv.attr("data-animate", gifs[i].images.fixed_height.url);
+             giphDiv.attr("data-state", "still")
+             giphDiv.append(rating);
+             giphDiv.append(url_2);
+             $('#giphy-view').append(giphDiv);
 
          }
      });
@@ -30,23 +34,23 @@
 
  //this function is to add and display giph buttons to the 
  function createGiphyButton() {
- 	   $("#giphyButtons-view").empty();
- 	   event.preventDefault();
-     
+     $("#giphyButtons-view").empty();
+     event.preventDefault();
+
      var giphySearch = $("#giphy-input").val().trim();
      topics.push(giphySearch);
 
-     	displayButtons();
-    
+     displayButtons();
+
  }
  //this is loop is to go through topics array and display on DOM
 
- function displayButtons(){
+ function displayButtons() {
 
- 	 for (var i = 0; i < topics.length; i++) {
+     for (var i = 0; i < topics.length; i++) {
          var giphyButton = $("<button>");
 
-         giphyButton.addClass("myGiphs");
+         giphyButton.addClass("myGiphsButtons");
          giphyButton.attr("data-giphy", topics[i])
 
          giphyButton.text(topics[i]);
@@ -55,6 +59,7 @@
 
  }
 
+
  displayButtons();
 
 
@@ -62,4 +67,22 @@
 
 
  //this function is to grab the giph from API
- $(document).on('click', '.myGiphs', getGifs);
+ $(document).on('click', '.myGiphsButtons', getGifs);
+
+ $(document).on("click", ".pause", changeState);
+
+
+ function changeState() {
+     var state = $(this).attr("data-state");
+
+
+     if (state === "still") {
+         $(this).attr("src", $(this).attr('data-animate'));
+         $(this).attr("data-state", "animate");
+
+     } else {
+         $(this).attr("src", $(this).attr("data-still"));
+         $(this).attr("data-state", "still");
+
+     }
+ }

@@ -1,10 +1,9 @@
-body{
+/*body{
 
-	font-family: 'Righteous', cursive;
+	font-family: 'Righteous', cursive;*/
 
      /*background-color: black;*/
-	background: url("/designers/subtlepatterns/wp-content/themes/tweaker7/images/transp_bg.png");
-}
+/**/
 
 button,
 div,
@@ -12,3 +11,26 @@ form,
 input {
       margin: 10px;
     }
+
+ /*#giphy-view{
+ 	float:left;
+ }*/
+
+ /*.container{
+ 	display: flex;
+ }*/
+
+ /*.myGiphs{
+ 	flex-direction: row;
+ }*/
+
+#giphy-view{
+
+	display: flex;
+}
+
+.pause{
+	flex-wrap: wrap;
+}
+
+
