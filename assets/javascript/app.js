@@ -40,8 +40,30 @@
      var giphySearch = $("#giphy-input").val().trim();
      topics.push(giphySearch);
 
-     displayButtons();
+    
+   //      var checker=buttonVerifier(giphySearch);
+   //   if(checker===true){
+          displayButtons();
+   // }
+   //  else{
 
+   //          break;
+   //  }
+
+ } function changeState() {
+     var state = $(this).attr("data-state");
+            console.log(state);
+            // console.log($(this).attr('data-animate'), $(this).attr("data-still")); √ 
+     if (state === "still") {
+         $(this).find('img').attr("src", $(this).attr('data-animate'));
+         $(this).attr("data-state", "animate");
+
+     } else {
+         $(this).find('img').attr("src", $(this).attr("data-still"));
+         $(this).attr("data-state", "still");
+     }
+     // $("#giphyButtons-view").prepend(giphyButton);
+      
  }
  //this is loop is to go through topics array and display on DOM
 
@@ -60,7 +82,17 @@
  }
 
 
- displayButtons();
+
+
+
+/* function buttonVerifier(exist){
+    for(var i=0; i<topics.length;i++){
+        if(topics[i]===exist){
+            alert("Button already exist try again!");
+            return true;
+        }
+    }
+ }*/
 
 
  $("#add-giphy").on("click", createGiphyButton);
@@ -71,18 +103,5 @@
 
  $(document).on("click", ".pause", changeState);
 
+  displayButtons();
 
- function changeState() {
-     var state = $(this).attr("data-state");
-
-
-     if (state === "still") {
-         $(this).attr("src", $(this).attr('data-animate'));
-         $(this).attr("data-state", "animate");
-
-     } else {
-         $(this).attr("src", $(this).attr("data-still"));
-         $(this).attr("data-state", "still");
-
-     }
- }
