@@ -1,9 +1,9 @@
-/*body{
+body{
 
 	font-family: 'Righteous', cursive;*/
 
      /*background-color: black;*/
-/**/
+}
 
 button,
 div,
@@ -27,10 +27,12 @@ input {
 #giphy-view{
 
 	display: flex;
+	flex-wrap:wrap;
 }
 
 .pause{
-	flex-wrap: wrap;
+	border-width: 20px;
+	border-color: blue;
 }
 
 
