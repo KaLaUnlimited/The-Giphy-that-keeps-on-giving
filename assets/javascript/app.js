@@ -40,20 +40,14 @@
      var giphySearch = $("#giphy-input").val().trim();
      topics.push(giphySearch);
 
-    
-   //      var checker=buttonVerifier(giphySearch);
-   //   if(checker===true){
-          displayButtons();
-   // }
-   //  else{
 
-   //          break;
-   //  }
 
- } function changeState() {
+ }
+
+ function changeState() {
      var state = $(this).attr("data-state");
-            console.log(state);
-            // console.log($(this).attr('data-animate'), $(this).attr("data-still")); √ 
+     console.log(state);
+     // console.log($(this).attr('data-animate'), $(this).attr("data-still")); √ 
      if (state === "still") {
          $(this).find('img').attr("src", $(this).attr('data-animate'));
          $(this).attr("data-state", "animate");
@@ -63,42 +57,30 @@
          $(this).attr("data-state", "still");
      }
      // $("#giphyButtons-view").prepend(giphyButton);
-      
+
  }
  //this is loop is to go through topics array and display on DOM
 
  function displayButtons() {
-        // var idNum="idNum";
+     // var idNum="idNum";
      for (var i = 0; i < topics.length; i++) {
          var giphyButton = $("<button>");
-       var  idNum=String("idNum"+i);
-       // var atag=$("<>");
-        //atag.attr("href","#"+idNum); 
-         giphyButton.html("<a href='#"+idNum+"'>" + topics[i]+ "</a>");
-           // giphyButton.append(atag);
-       //  giphyButton.add($("a").attr("href","#"+ idNum));
+         var idNum = String("idNum" + i);
+         // var atag=$("<>");
+         //atag.attr("href","#"+idNum); 
+         giphyButton.html("<a href='#" + idNum + "'>" + topics[i] + "</a>");
+         // giphyButton.append(atag);
+         //  giphyButton.add($("a").attr("href","#"+ idNum));
          giphyButton.attr("id", idNum);
          giphyButton.addClass("myGiphsButtons");
          giphyButton.attr("data-giphy", topics[i])
 
-        // giphyButton.text(topics[i]);
+         // giphyButton.text(topics[i]);
          $("#giphyButtons-view").append(giphyButton);
      }
-    
+
  }
 
-
-
-
-
-/* function buttonVerifier(exist){
-    for(var i=0; i<topics.length;i++){
-        if(topics[i]===exist){
-            alert("Button already exist try again!");
-            return true;
-        }
-    }
- }*/
 
 
  $("#add-giphy").on("click", createGiphyButton);
@@ -109,5 +91,4 @@
 
  $(document).on("click", ".pause", changeState);
 
-  displayButtons();
-
+ displayButtons();
