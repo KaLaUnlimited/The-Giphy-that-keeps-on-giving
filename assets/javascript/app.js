@@ -1,4 +1,4 @@
- var topics = ["Rugrats", "Doug", "Animaniacs", "Hey Arnold", "Power Puff Girls"];
+ var topics = ["Rugrats", "Doug", "Animaniacs", "Hey Arnold", "Power Puff Girls", "Sonic", "Pepper Ann", "Rocko", "Dexter's Laboratory"];
 
  function getGifs() {
 
@@ -68,17 +68,23 @@
  //this is loop is to go through topics array and display on DOM
 
  function displayButtons() {
-
+        // var idNum="idNum";
      for (var i = 0; i < topics.length; i++) {
          var giphyButton = $("<button>");
-
+       var  idNum=String("idNum"+i);
+       // var atag=$("<>");
+        //atag.attr("href","#"+idNum); 
+         giphyButton.html("<a href='#"+idNum+"'>" + topics[i]+ "</a>");
+           // giphyButton.append(atag);
+       //  giphyButton.add($("a").attr("href","#"+ idNum));
+         giphyButton.attr("id", idNum);
          giphyButton.addClass("myGiphsButtons");
          giphyButton.attr("data-giphy", topics[i])
 
-         giphyButton.text(topics[i]);
+        // giphyButton.text(topics[i]);
          $("#giphyButtons-view").append(giphyButton);
      }
-
+    
  }
 
 

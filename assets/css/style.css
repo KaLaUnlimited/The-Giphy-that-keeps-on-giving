@@ -1,36 +1,51 @@
-header{
-	text-align: center;
+header {
+    text-align: center;
 }
-body{
 
-	font-family: 'Righteous', cursive;*/
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c19e67+11,f3e2c7+54 */
+    background: rgb(193, 158, 103);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(193, 158, 103, 1) 11%, rgba(243, 226, 199, 1) 54%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(193, 158, 103, 1) 11%, rgba(243, 226, 199, 1) 54%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(193, 158, 103, 1) 11%, rgba(243, 226, 199, 1) 54%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c19e67', endColorstr='#f3e2c7', GradientType=0);
+    /* IE6-9 */
+    background-repeat: no-repeat;
 
-     /*background-color: black;*/
+    font-family: 'Righteous', cursive;
+    height: 1100px;
 }
-.container{
-	width:100%;
-	padding:0;
-	margin:0;
+
+.container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 button,
 div,
 form,
 input {
-      margin: 10px;
-    }
-
-
-
-#giphy-view{
-
-	display: flex;
-	flex-wrap:wrap;
-}
-
-.pause{
-	border-width: 20px;
-	border-color: blue;
+    margin: 10px;
 }
 
 
+
+#giphy-view {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pause {
+    border-width: 20px;
+    border-color: blue;
+}
+:target {
+    border: 2px solid #D4D4D4;
+    background-color: #777777;
+}
