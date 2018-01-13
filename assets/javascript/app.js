@@ -4,7 +4,7 @@
 
      var input = $(this).data("giphy");
      var api_key = '3K2ZmyEMrXGGyR7EGBGnbti1HZNk2TZL';
-     var url = 'http://api.giphy.com/v1/gifs/search?api_key=' + api_key + '&q=' + input + ' cartoon&limit=10';
+     var url = 'https://api.giphy.com/v1/gifs/search?api_key=' + api_key + '&q=' + input + ' cartoon&limit=10';
 
      $.ajax({
          url: url
