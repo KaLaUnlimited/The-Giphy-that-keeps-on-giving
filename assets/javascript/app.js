@@ -4,8 +4,8 @@
 
      var input = $(this).data("giphy");
      var api_key = '3K2ZmyEMrXGGyR7EGBGnbti1HZNk2TZL';
-     var url = 'https://api.giphy.com/v1/gifs/search?api_key=' + api_key + '&q=' + input + ' cartoon&limit=10';
-
+     var url =// 'https://api.giphy.com/v1/gifs/search?q=' + input + '& 'api_key api_key=' + + cartoon&limit=10';
+        "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=dc6zaTOxFJmzC&limit=10";
      $.ajax({
          url: url
      }).done(function(res) {
