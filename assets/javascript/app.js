@@ -36,11 +36,11 @@
  function createGiphyButton() {
      $("#giphyButtons-view").empty();
      event.preventDefault();
-     displayButtons();
+     
 
      var giphySearch = $("#giphy-input").val().trim();
      topics.push(giphySearch);
-
+     displayButtons();
 
 
  }
